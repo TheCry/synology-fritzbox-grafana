@@ -1,0 +1,16 @@
+version: '3'
+services:
+  grafana:
+    image: space2place/synology-fritzbox-grafana:latest
+    container_name: space2place-grafana
+    environment:
+      TZ: Europe/Berlin
+    restart: unless-stopped
+    volumes:
+      - /volume1/docker/grafana:/var/lib/grafana
+      - /volume1/docker/influxdb:/var/lib/influxdb
+      - /volume1/docker/collectd:/var/lib/collectd
+      - /volume1/docker/collectd-conf.d:/etc/collectd/collectd.conf.d
+    ports:
+      - 3003:3003
+      - 5144:514/udp
