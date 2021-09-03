@@ -9,14 +9,14 @@ This project builds on the template from https://github.com/alhazmy13/Synology-N
 This dashboard was created by "alhazmy13":
 https://grafana.com/grafana/dashboards/14590 (Synology DashBoardby alhazmy13)
 
-![alt text](https://github.com/TheCry/synology-fritzbox-grafana/blob/mainimages/dashboard.png)
+![alt text](https://github.com/TheCry/synology-fritzbox-grafana/blob/main/images/dashboard.png)
 
 
 ## FRITZ!Box Router Dashboard
 This dashboard was created by "Christian Fetzer":
 https://grafana.com/grafana/dashboards/713 (FRITZ!Box Router Statusby Christian Fetzer)
 
-![alt text](https://github.com/TheCry/synology-fritzbox-grafana/blob/mainimages/grafana-fitzbox.jpg)
+![alt text](https://github.com/TheCry/synology-fritzbox-grafana/blob/main/images/grafana-fitzbox.jpg)
 
 ## Requirements
 * Installation of Docker on Synology NAS
@@ -36,7 +36,7 @@ https://grafana.com/grafana/dashboards/713 (FRITZ!Box Router Statusby Christian 
 
 ## Create needed folders on Synology NAS
 1. Create four empty folders in your Synology ***collectd***, ***collectd-conf.d***, ***grafana*** and ***influxdb*** (On Synology NAS under "docker")
-![alt text](https://github.com/TheCry/synology-fritzbox-grafana/blob/mainimages/synology-folder-2.JPG)
+![alt text](https://github.com/TheCry/synology-fritzbox-grafana/blob/main/images/synology-folder-2.JPG)
 
 ## Create collectd FRITZ!Box Router file
 1. Create a file with the FRITZ!Box user login data (Template: https://github.com/TheCry/synology-fritzbox-grafana/blob/maincollectd-fritzbox/fritzcollectd.conf)
@@ -52,12 +52,12 @@ https://grafana.com/grafana/dashboards/713 (FRITZ!Box Router Statusby Christian 
 7. From the Volume tab again, click "Add folder" and select the third folder that we created, "grafana" and on mount Path, paste ***/var/lib/grafana***
 8. From the Volume tab again, click "Add Folder" and select the fourth folder that we created "influxdb" and on mount Path paste ***/var/lib/influxdb***
 
-![alt text](https://github.com/TheCry/synology-fritzbox-grafana/blob/mainimages/start-container_extended_volumes.JPG)
+![alt text](https://github.com/TheCry/synology-fritzbox-grafana/blob/main/images/start-container_extended_volumes.JPG)
 
 9. Network Tab keep it in bridge mode
 10. Port settings, just change Local port for 3003 from Auto to 3003, and port 514 from Auto to 5144
 
-![alt text](https://github.com/TheCry/synology-fritzbox-grafana/blob/mainimages/start-container_extended_ports.JPG)
+![alt text](https://github.com/TheCry/synology-fritzbox-grafana/blob/main/images/start-container_extended_ports.JPG)
 
 11. Environment Tab > Add new variable "TZ" with your local time zone **ignore this if you want to use the default UTC**
 12. Apply, Next, Done and your container should be ready.
