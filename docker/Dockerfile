@@ -119,7 +119,42 @@ RUN wget https://dl.grafana.com/oss/release/grafana_${GRAFANA_VERSION}_amd64.deb
 # Configure Grafana with provisioning
 ADD grafana/provisioning /etc/grafana/provisioning
 COPY grafana/grafana.ini /etc/grafana/grafana.ini
+
+# Install grafana-image-renderer
+RUN apt-get -y install \
+ libxdamage1 \
+ libxext6 \
+ libxi6 \
+ libxtst6 \
+ libnss3 \
+ libnss3 \
+ libcups2 \
+ libxss1 \
+ libxrandr2 \
+ libasound2 \
+ libatk1.0-0 \
+ libatk-bridge2.0-0 \
+ libpangocairo-1.0-0 \
+ libpango-1.0-0 \
+ libcairo2 \
+ libatspi2.0-0 \
+ libgtk3.0-cil \
+ libgdk3.0-cil \
+ libx11-xcb-dev \
+ libgbm1 \
+ libxshmfence1
+
 RUN /usr/sbin/grafana-cli plugins install grafana-image-renderer
+
+COPY root-scrpits/backup-grafana-image-renderer.sh /tmp/backup-grafana-image-renderer.sh
+RUN chmod +x /tmp/backup-grafana-image-renderer.sh
+RUN /tmp/backup-grafana-image-renderer.sh
+
+COPY root-scrpits/copy-grafana-image-renderer.sh /root/copy-grafana-image-renderer.sh
+RUN chmod +x /root/copy-grafana-image-renderer.sh
+
+COPY root-scrpits/container-startup.sh /root/container-startup.sh
+RUN chmod +x /root/container-startup.sh
 
 EXPOSE 22/tcp 3003/tcp 8086/tcp 8888/tcp 8125/udp 514/udp
 
@@ -127,5 +162,5 @@ EXPOSE 22/tcp 3003/tcp 8086/tcp 8888/tcp 8125/udp 514/udp
 RUN apt-get clean && \
  rm -rf /var/lib/apt/lists/*  /var/tmp/*
 
-CMD ["/usr/bin/supervisord"]
+CMD ["/root/container-startup.sh"]
 
