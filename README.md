@@ -7,14 +7,14 @@ This project builds on the template from https://github.com/alhazmy13/Synology-N
 
 ## Synology NAS Dashboard
 This dashboard was created by "alhazmy13":
-https://grafana.com/grafana/dashboards/14590 (Synology DashBoardby alhazmy13)
+https://grafana.com/grafana/dashboards/14590 (Synology DashBoard by alhazmy13)
 
 ![alt text](https://github.com/TheCry/synology-fritzbox-grafana/blob/main/images/dashboard.png)
 
 
 ## FRITZ!Box Router Dashboard
 This dashboard was created by "Christian Fetzer":
-https://grafana.com/grafana/dashboards/713 (FRITZ!Box Router Statusby Christian Fetzer)
+https://grafana.com/grafana/dashboards/713 (FRITZ!Box Router Status by Christian Fetzer)
 
 ![alt text](https://github.com/TheCry/synology-fritzbox-grafana/blob/main/images/grafana-fitzbox.jpg)
 
