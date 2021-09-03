@@ -1,0 +1,10 @@
+# config file version
+apiVersion: 1
+
+datasources:
+  - name: InfluxDB-FritzBox
+    type: influxdb
+    access: proxy
+    database: collectd
+    url: http://localhost:8086
+
