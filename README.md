@@ -40,7 +40,7 @@ https://grafana.com/grafana/dashboards/713 (FRITZ!Box Router Statusby Christian 
 ![alt text](https://github.com/TheCry/synology-fritzbox-grafana/blob/main/images/synology-folder-2.JPG)
 
 ## Create collectd FRITZ!Box Router file
-1. Create a file with the FRITZ!Box user login data (Template: https://github.com/TheCry/synology-fritzbox-grafana/blob/maincollectd-fritzbox/fritzcollectd.conf)
+1. Create a file with the FRITZ!Box user login data (Template: https://github.com/TheCry/synology-fritzbox-grafana/blob/main/collectd-fritzbox/fritzcollectd.conf)
 2. Upload "fritzcollectd.conf" on the Synology NAS to the created folder "collectd-conf.d"
 
 ## Run Docker image in your Synology NAS
