@@ -1,7 +1,5 @@
 #!/bin/bash
 
-mkdir -p /root/grafana-plugins/
-mv /var/lib/grafana/plugins/grafana-image-renderer/ /root/grafana-plugins/
 PLUGINDIR="/var/lib/grafana/plugins"
 DIR="/var/lib/grafana/plugins/grafana-image-renderer"
 if [ ! -d "$DIR" ]; then
