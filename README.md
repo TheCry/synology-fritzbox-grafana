@@ -81,4 +81,4 @@ https://grafana.com/grafana/dashboards/713 (FRITZ!Box Router Statusby Christian 
 4. Apply
 
 ## Using graphs in external tools like ioBroker
-Yes it is possible. Garafana is configured with ***allow_embedding = true*** and ***auth.anonymous***.
+Yes it is possible. Grafana is configured with ***allow_embedding = true*** and ***auth.anonymous***.
