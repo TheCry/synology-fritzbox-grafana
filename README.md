@@ -36,6 +36,7 @@ https://grafana.com/grafana/dashboards/713 (FRITZ!Box Router Statusby Christian 
 
 ## Create needed folders on Synology NAS
 1. Create four empty folders in your Synology ***collectd***, ***collectd-conf.d***, ***grafana*** and ***influxdb*** (On Synology NAS under "docker")
+
 ![alt text](https://github.com/TheCry/synology-fritzbox-grafana/blob/main/images/synology-folder-2.JPG)
 
 ## Create collectd FRITZ!Box Router file
