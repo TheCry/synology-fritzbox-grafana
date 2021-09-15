@@ -146,14 +146,14 @@ RUN apt-get -y install \
 
 RUN /usr/sbin/grafana-cli plugins install grafana-image-renderer
 
-COPY root-scrpits/backup-grafana-image-renderer.sh /tmp/backup-grafana-image-renderer.sh
+COPY root-scripts/backup-grafana-image-renderer.sh /tmp/backup-grafana-image-renderer.sh
 RUN chmod +x /tmp/backup-grafana-image-renderer.sh
 RUN /tmp/backup-grafana-image-renderer.sh
 
-COPY root-scrpits/copy-grafana-image-renderer.sh /root/copy-grafana-image-renderer.sh
+COPY root-scripts/copy-grafana-image-renderer.sh /root/copy-grafana-image-renderer.sh
 RUN chmod +x /root/copy-grafana-image-renderer.sh
 
-COPY root-scrpits/container-startup.sh /root/container-startup.sh
+COPY root-scripts/container-startup.sh /root/container-startup.sh
 RUN chmod +x /root/container-startup.sh
 
 EXPOSE 22/tcp 3003/tcp 8086/tcp 8888/tcp 8125/udp 514/udp
