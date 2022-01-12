@@ -1,9 +1,9 @@
 # Synology NAS and FRITZ!Box Router monitoring
 This project builds on the template from https://github.com/alhazmy13/Synology-NAS-monitoring. The Docker container was built with Debian 11 (Bullseye) and the latest packages:
-* TELEGRAF => 1.19.3-1
-* INFLUXDB => 1.8.9
+* TELEGRAF => 1.21.2-1
+* INFLUXDB => 1.8.10
 * GRAFANA => 8.1.2
-* CHRONOGRAF => 1.9.0
+* CHRONOGRAF => 1.9.1
 
 ## Synology NAS Dashboard
 This dashboard was created by "alhazmy13":
@@ -44,7 +44,7 @@ https://grafana.com/grafana/dashboards/713 (FRITZ!Box Router Status by Christian
 2. Upload "fritzcollectd.conf" on the Synology NAS to the created folder "collectd-conf.d"
 
 ## Run Docker image in your Synology NAS
-1. Open Docker client from Synology > Image > Add > Add from url and paste Hub page url "https://hub.docker.com/repository/docker/space2place/synology-fritzbox-grafana"
+1. Open Docker client from Synology > Image > Add > Add from url and paste Hub page url "https://hub.docker.com/r/space2place/synology-fritzbox-grafana"
 2. Wait until it finishes downloading the image
 3. Click on the image "space2place/synology-fritzbox-grafana" and then click on Launch 
 4. Click on Advanced Settings and check "Enable auto-restart."

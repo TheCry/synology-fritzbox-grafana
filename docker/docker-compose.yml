@@ -2,7 +2,7 @@ version: '3'
 services:
   grafana:
     image: space2place/synology-fritzbox-grafana:latest
-    container_name: space2place-grafana
+    container_name: space2place-fritzbox-grafana
     environment:
       TZ: Europe/Berlin
     restart: unless-stopped

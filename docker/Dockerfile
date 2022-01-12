@@ -6,10 +6,10 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
 # Default versions
-ENV TELEGRAF_VERSION 1.19.3-1
-ENV INFLUXDB_VERSION 1.8.9
+ENV TELEGRAF_VERSION 1.21.2-1
+ENV INFLUXDB_VERSION 1.8.10
 ENV GRAFANA_VERSION 8.1.2
-ENV CHRONOGRAF_VERSION 1.9.0
+ENV CHRONOGRAF_VERSION 1.9.1
 ENV GF_DATABASE_TYPE=sqlite3
 
 # Clear previous sources
@@ -30,6 +30,7 @@ RUN apt-get -y update && \
  apt-get -y dist-upgrade && \
  apt-get -y install \
  apt-utils \
+ adduser \
  vim \
  nano \
  supervisor \
@@ -38,6 +39,7 @@ RUN apt-get -y update && \
  git \
  htop \
  libfontconfig \
+ libfontconfig1 \
  mc \
  net-tools \
  openssh-server \
@@ -101,6 +103,8 @@ RUN wget https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION
 RUN mv -f /etc/telegraf/telegraf.conf /etc/telegraf/telegraf.conf.default 
 COPY telegraf/telegraf.conf /etc/telegraf/telegraf.conf
 COPY telegraf/init.sh /etc/init.d/telegraf
+RUN mkdir -p /etc/telegraf/.cache
+RUN chown telegraf:telegraf /etc/telegraf/.cache
 RUN chmod +x /etc/init.d/telegraf
 
 # Install Chronograf
